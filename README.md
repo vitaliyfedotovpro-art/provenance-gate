@@ -1,5 +1,7 @@
 # Provenance Gate
 
+[![tests](https://github.com/vitaliyfedotovpro-art/provenance-gate/actions/workflows/test.yml/badge.svg)](https://github.com/vitaliyfedotovpro-art/provenance-gate/actions/workflows/test.yml)
+
 A small runtime rail for agent harnesses: **a turn's provenance — who or what
 produced it — decides whether it may trigger an action.** Not a prompt
 instruction the model has to remember; a gate the model cannot talk its way past.
