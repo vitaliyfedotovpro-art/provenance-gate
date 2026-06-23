@@ -6,12 +6,17 @@ A small runtime rail for agent harnesses: **a turn's provenance — who or what
 produced it — decides whether it may trigger an action.** Not a prompt
 instruction the model has to remember; a gate the model cannot talk its way past.
 
+> **Independently adopted by CodeWhale (~39k★):** the same invariant shipped there as a
+> typed-provenance runtime check — commit
+> [`f22b49a`](https://github.com/Hmbown/CodeWhale/commit/f22b49a196159294e664c88e38acdf80c55e2d01)
+> (`Helped-by` credit), issue [#3315](https://github.com/Hmbown/CodeWhale/issues/3315).
+
 ## The failure it stops
 
 Agents in a single generation stream can drift into proposing work, *answering
 their own question as if the user approved*, and executing on that forged
-consent. Observed in the wild, e.g. CodeWhale (DeepSeek-TUI)
-[#3275](https://github.com/Hmbown/DeepSeek-TUI/issues/3275): the agent fabricated
+consent. Observed in the wild, e.g. CodeWhale
+[#3275](https://github.com/Hmbown/CodeWhale/issues/3275): the agent fabricated
 user replies (`改吧`, `嗯`) and ran autonomous edits across 75+ files. A guard that
 only checks *“is there a user message?”* can't catch this — the fabricated
 message *is* there. You need to check where it **came from**.
